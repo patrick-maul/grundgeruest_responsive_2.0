@@ -1,0 +1,99 @@
+*{ /* Spricht jedes Element im HTML an */
+    margin: 0px; /* Außenabstand */
+    padding: 0px; /* Innenabstand */
+}
+
+header{  /* Spricht alle header-Elemete an (auch wenn es hier nur eins gibt)*/
+    background-color: antiquewhite; /* Stellt die Hintergrundfarbe ein */
+}
+
+#img_warper{ /* Spricht das Element mit einer id an */
+    width: 70%;
+    margin: 0px auto;
+    padding: 10px 0px;
+}
+
+header img{ /* Spricht alle img-Elemente an die sich innerhalb eines header-Elements befinden */
+    width: 100%; /* Stellt die Breite ein */
+}
+
+#list{
+    list-style: none;  /* Stellt die aufzählungs art ein, Nummern, Punkte usw. */
+    display: flex; /* Darstellung hier: flex -> sehr flexibel */
+    flex-flow: row nowrap; /* Gibt die Richtung an und ob es einen Zeilenumbruch erzegt */
+    justify-content: space-around; /* Platzierung des Contents */
+    padding: 0px 0px 10px 0px;
+}
+
+.link{ /* Spricht alle Elemente mit einer Klasse an */
+    color: black; /* Stellt die Schriftfarbe ein */
+    text-decoration: none; /* Stellt die Textdekotation ein, unterstrichen, durchgestrichen usw. */
+}
+
+.animated_underline{
+    width: 0%;
+    height: 2px;
+    border: none; /*  */
+    margin: 0px auto;
+    background-color: black;
+}
+
+footer{
+    width: 100%;
+    background-color: antiquewhite;
+    height: 100px;
+    text-align: center;
+}
+
+main{
+    width: 99%;
+    margin: 0px auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+}
+
+#main_content{
+    background-color: red;
+    max-width: 100%;
+    margin-bottom: 5px;
+}
+
+p .main_img{
+    max-width: 200px;
+    float: right;
+}
+
+#main_aside{
+    background-color: blue;
+    max-width: 100%;
+    margin-bottom: 5px;
+}
+
+@media screen and (min-width: 600px) {
+    /* Wichtig für die Animation der Underline bei den Links */
+    .link:hover{ /* Beim hovern mit der Maus über eine Element der Klasse verändert sich das aussehen des Elements */
+        color: dimgray;
+        transition: all 0.5s; /* Geschwindigkeit der Veränderung, hier bei allem, kann auch spezifiziert werden */
+    }
+
+    .link:hover>.animated_underline{ /* Beim hovern mit der Maus über eine Element der Klasse, soll sich das folgebe Element verändern */
+        width: 100%;
+        background-color: dimgrey;
+        transition: width 0.5s;
+        transform: background-color 0.5s;
+    }
+    
+    main{
+        flex-flow: row nowrap;
+    }
+    #main_content{
+        max-width: 79%;
+        margin-bottom: 0px;
+    }
+    
+    #main_aside{
+        max-width: 20%;
+        margin-bottom: 0px;
+    }
+}
